@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregnancy Tracking System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <i class="fas fa-baby"></i>
+                <h1>Pregnancy Tracking System</h1>
+            </div>
+        </header>
+
+        <main>
+            <section class="mother-info card">
+                <h2><i class="fas fa-female"></i> Mother's Information</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter mother's name">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" placeholder="Age">
+                    </div>
+                    <div class="form-group">
+                        <label for="lmp">Last Menstrual Period (LMP)</label>
+                        <input type="date" id="lmp">
+                    </div>
+                    <div class="form-group">
+                        <label for="blood-type">Blood Type</label>
+                        <select id="blood-type">
+                            <option value="">Select Blood Type</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pregnancy-status card">
+                <h2><i class="fas fa-calendar-alt"></i> Pregnancy Status</h2>
+                <div id="pregnancy-info" class="pregnancy-info">
+                    <!-- Pregnancy information will be displayed here -->
+                </div>
+            </section>
+
+            <section class="health-tracking card">
+                <h2><i class="fas fa-heartbeat"></i> Health Tracking</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="weight">Current Weight (kg)</label>
+                        <input type="number" id="weight" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="blood-pressure">Blood Pressure</label>
+                        <input type="text" id="blood-pressure" placeholder="e.g., 120/80">
+                    </div>
+                    <div class="form-group">
+                        <label for="symptoms">Current Symptoms</label>
+                        <div id="symptoms-grid" class="symptoms-grid"></div>
+                    </div>
+                </div>
+                <button onclick="saveHealthRecord()">Save Health Record</button>
+            </section>
+
+            <section class="appointments card">
+                <h2><i class="fas fa-calendar-check"></i> Appointments</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="appointment-date">Date</label>
+                        <input type="datetime-local" id="appointment-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="appointment-type">Type</label>
+                        <select id="appointment-type">
+                            <option value="checkup">Regular Checkup</option>
+                            <option value="ultrasound">Ultrasound</option>
+                            <option value="blood-test">Blood Test</option>
+                            <option value="vaccination">Vaccination</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointment-notes">Notes</label>
+                        <textarea id="appointment-notes"></textarea>
+                    </div>
+                </div>
+                <button onclick="saveAppointment()">Schedule Appointment</button>
+                <div id="appointments-list" class="appointments-list">
+                    <!-- Appointments will be listed here -->
+                </div>
+            </section>
+
+            <section class="history card">
+                <h2><i class="fas fa-history"></i> Health History</h2>
+                <div id="health-history" class="health-history">
+                    <!-- Health records will be displayed here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
